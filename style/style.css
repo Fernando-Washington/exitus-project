@@ -2,8 +2,255 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-h1 {
-    color: red;
+:root {
+    --dark-blue: #1B418C;
+    --light-blue: #056CF2;
+    --cyan-blue: #9BC1F2;
+    --pastel-yellow: #F2C49B;
+    --orange: #F25C05;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Header Styles */
+header {
+    background-color: white;
+    padding: 0.4rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 72px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark-blue);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--light-blue);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background-image: url(../assets/images/exitus-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    margin-top: 70px;
+}
+
+.hero-content {
+    width: 50%;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    padding: 1rem 2rem;
+    background-color: var(--orange);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+}
+
+/* Features Section */
+.features {
+    padding: 5rem 5%;
+    background-color: #f9f9f9;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--dark-blue);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-card i {
+    font-size: 3rem;
+    color: var(--light-blue);
+    margin-bottom: 1rem;
+}
+
+/* About Section */
+.about {
+    padding: 5rem 5%;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.about-content {
+    width: 50%;
+}
+
+.about-image {
+    width: 50%;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+}
+
+/* Programs Section */
+.programs {
+    padding: 5rem 5%;
+    background-color: #f9f9f9;
+}
+
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.program-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.program-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.program-content {
+    padding: 1.5rem;
+}
+
+/* Contact Section */
+.contact {
+    padding: 5rem 5%;
+    background: linear-gradient(45deg, var(--dark-blue), var(--light-blue));
+    color: white;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-blue);
+    color: white;
+    padding: 3rem 5%;
+    text-align: center;
+}
+
+.social-links {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content {
+        width: 100%;
+        text-align: center;
+    }
+
+    .features-grid,
+    .programs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about {
+        flex-direction: column;
+    }
+
+    .about-content,
+    .about-image {
+        width: 100%;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
 }
